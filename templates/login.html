@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Imagine Mood</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <h2>Imagine Mood</h2>
+  <div class="form-popup" id="myForm">
+
+    <form action="/login" method="POST" class="form-container">
+      <h1>Login</h1>
+      <label for="email"><b>Email</b></label><br>
+      <input type="email" placeholder="Enter Email" id="email" name="email" required>
+      
+      <br></br>
+      
+      <label for="password"><b>Password</b></label><br>
+      <input type="password" placeholder="Enter Password" id="password" name="password" required>
+      
+    {% if message %}
+      <div style="color:red" class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    {% endif %}
+        <br><a href="/forgot">Forgot Password?</a></br>
+      <button type="submit" class="btn">Login</button>
+      <p>Don’t have an account? <a href="/signup">Sign Up</a></p>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Imagine Health</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+
+<h2>Imagine account creation</h2>
+
+<div class="form-popup" id="signup">
+  
+  <form method = "POST" action="/signup" class="form-container">
+    <h1>Sign up</h1>
+
+    <label for="email"><b>Email</b></label><br>
+    <input type="email" placeholder="Enter Email" name="email" required>
+
+    <br></br>
+    
+    <label for="password"><b>Password</b></label><br>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    {% if message %}
+    <p style="color:red">{{ message }}</p>
+    {% endif %}
+    
+    <input type="submit" class="btn" Value = "Sign Up">
+    <p>Return to <a href="/">Login Page.</a></p>
+  </form>
+</div>
+
+
+</body>
+</html>

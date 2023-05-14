@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="static/style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+  <body>
+
+<div class="form-popup" id="myForm">
+    <form method="POST" class="form-container">
+      <h1>Forgot Password</h1>
+      <label for="email">Email</label>
+      <br><input type="email" id="email" name="email" required></br>
+    
+      <label for="new_password">New Password</label>
+      <input type="password" id="new_password" name="new_password" minlength="8" required>
+      <br>
+      <label for="confirm_password">Confirm New Password</label>
+      <br>
+      <input type="password" id="confirm_password" name="confirm_password" minlength="8" required>
+      <br>
+            
+    {% if message %}
+      <div style="color:red" class="alert alert-danger" role="alert">
+        {{ message }}
+      </div>
+    {% endif %}
+      <input type="submit" class="btn" value="Submit">
+      <p>Return to <a href="/">Login Page.</a></p>
+
+    </form>
+ </div>
+
+  </body>
+</html>

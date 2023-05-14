@@ -1,0 +1,107 @@
+body {
+  background-color: #262626;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: raleway;
+  color: white;
+} 
+
+.score-box {
+      background-color: #444444;
+      color: #ffffff;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      font-size: 64px;
+      text-align: center;
+      position: center;
+      width: 500px;
+      justify-content: center;
+      align-items: center;
+    }
+
+.score-label {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+.score-value {
+      font-size: 64px;
+      font-weight: bold;
+    }
+
+.message-value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+.image-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+.image-box {
+      margin-left: 50px;
+      text-align: center;
+      float: left;
+      justify-content: center;
+      align-items: center;
+    }
+
+.image-box p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+.image-box img {
+      max-width: 400px;
+      max-height: 400px;
+    }
+
+.start-button {
+      display: block;
+      margin: 50px auto 0 auto;
+      font-size: 32px;
+      padding: 20px 40px;
+      border-radius: 5px;
+      background-color: #444444;
+      color: #ffffff;
+      border: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+.start-button {
+      display: block;
+      margin: 50px auto 0 auto;
+      font-size: 32px;
+      padding: 20px 40px;
+      border-radius: 5px;
+      background-color: #444444;
+      color: #ffffff;
+      border: none;
+    }
+
+
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
