@@ -1,86 +1,232 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmoWell - Your Mental Well-being Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        /* Header styles */
+        header {
+            background-color: #1e5799;
+            padding: 10px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontAwesome.css">
-    <link rel="stylesheet" href="css/templatemo-main.css">
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        nav li {
+            margin-left: 20px;
+        }
 
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
 
+        /* Hero Section styles */
+        .hero {
+            background-image: url('hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
 
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
 
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+        }
 
-  
-  <title>Imagine Health</title>
-  <link rel="stylesheet" href="static/main.css">
+        .cta-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #f76c6c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+
+        /* Other section styles */
+        section {
+            padding: 50px 0;
+        }
+
+        section h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* Video container styles */
+        #video-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1e5799;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h2>Imagine Health</h2>
-  <div class="score-box">
-    {% if da_score is not none %}
-      <p>Mental Wellness Score: {{ da_score }}</p>
-    {% endif %}
-  </div>
-  
-  <!-- <div class="video-container">
-    <video id="video-element" autoplay playsinline muted></video>
-  </div> -->
-  <div class="parallax-content baner-content" id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-                <div id="video-container">
-                    <video id="video-element" autoplay playsinline width="100%"></video>
-                    <img id="image-element" src="{{ url_for('video_feed') }}" width="100%" style="display: none;">
-                </div>
-                <button id="start-stop-button" class="start-button" onclick="handleStartStopClick()">Start</button>
-            </div>
+    <!-- Header -->
+    <header>
+        <div class="logo">EmoWell</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner-section" id="home">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 offset-lg-2">
+                  <div id="video-container">
+                      <!-- Video feed will be displayed here -->
+                      <img src="/video_feed" width="100%" height="auto" alt="Video Feed">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>EmoWell - Your Mental Well-being Tracker</h1>
+        <p>Track your emotions and take charge of your mental health. Use your webcam for real-time assessments.</p>
+        <a href="#signup" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Emotion Tracking Section -->
+    <section class="emotion-tracking" style="background-color: #f7f7f7;">
+        <h2>Track Your Emotions Anywhere, Anytime</h2>
+        <p>Our app uses your webcam to analyze emotions during your activities. Gain insights into your mental well-being effortlessly.</p>
+    </section>
+
+    <!-- App Usage Instructions -->
+    <section class="app-usage" style="background-color: #ffffff;">
+        <h2>How It Works</h2>
+        <ul>
+            <li>Sign up and provide your primary emergency contact.</li>
+            <li>Run the app in the background for 20 to 30 minutes while you engage in your activities.</li>
+            <li>View the generated bar chart and positivity scale for your emotions during the session.</li>
+            <li>Get a weekly score and personalized suggestions if needed.</li>
+        </ul>
+    </section>
+
+    <!-- Data Privacy and Security -->
+    <section class="privacy" style="background-color: #f7f7f7; cursor: pointer;" onclick="togglePrivacy()">
+      <h2>Your Data is Safe with Us</h2>
+      <p id="privacyParagraph" style="display: none; opacity: 0; transition: opacity 0.5s;">At EmoWell, we prioritize your privacy and employ robust security measures to protect your information. Our cloud-based infrastructure follows industry best practices to ensure secure storage and access for authorized users. Data encryption techniques safeguard sensitive information, and regular security audits address potential vulnerabilities. Our cloud service providers adhere to strict security standards, ensuring the highest level of protection. Rest assured, your data is handled with the utmost care, providing you with a safe and seamless experience on your mental well-being journey.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" style="background-color: #ffffff;">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial">
+            <blockquote>"EmoWell has been a game-changer for me. I now understand my emotions better and take proactive steps for my mental health."</blockquote>
+            <p>- Sarah, EmoWell User</p>
         </div>
-    </div>
-</div>
+    </section>
 
-  <!-- <div class="start-button-container">
-    <button id="start-button" class="start-button">Start</button>
-  </div> -->
+    <!-- Call-to-Action (CTA) Button -->
+    <section class="cta" style="background-color: #1e5799;">
+        <h2>Start Your Mental Well-being Journey Today</h2>
+        <a href="#signup" class="cta-button">Sign Up Now</a>
+    </section>
 
-  <div class="image-box">
-    <p>News on sleep</p>
-    <a href="https://www.today.com/health/sleep-better-today">
-      <img src="https://burst.shopifycdn.com/photos/cat-sleeps-belly-up.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="Image 1">
-    </a>
-  </div>
+    <!-- Latest News Section -->
+    <section class="latest-news" style="background-color: #f7f7f7;">
+        <h2>Stay Informed</h2>
+        <p>Check out the latest news on sleep, mental wellness, and more.</p>
+        <ul>
+            <li><a href="#article1">Article 1</a></li>
+            <li><a href="#article2">Article 2</a></li>
+            <li><a href="#article3">Article 3</a></li>
+        </ul>
+    </section>
 
-  <div class="image-box">
-    <p>News on mental health</p>
-    <a href="https://www.today.com/health/mental-health">
-      <img src="https://burst.shopifycdn.com/photos/woman-meditates.jpg?width=925&format=pjpg&exif=1&iptc=1" alt="Image 1">
-    </a>
-  </div>
-<style>
-  .score-box {
-  font-size: 24px; /* Adjust the font size as needed */
-  text-align: center;
-  padding: 10px;
-  background-color: #f5f5f5;
-  margin: 10px auto;
-  width: 80%;
-  border-radius: 5px;
-}
-</style>
-<script src="main.js"></script>
+    <!-- Contact Information -->
+    <section class="contact" style="background-color: #ffffff;">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to contact us.</p>
+        <p>Email: contact@emowell.com</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div>&copy; 2023 EmoWell. All rights reserved.</div>
+        <div>Privacy Policy | Terms of Service</div>
+    </footer>
 </body>
+<script>
+  function togglePrivacy() {
+    var paragraph = document.getElementById("privacyParagraph");
+    if (paragraph.style.display === "none") {
+      paragraph.style.display = "block";
+      setTimeout(function() {
+        paragraph.style.opacity = "1";
+      }, 50);
+    } else {
+      paragraph.style.opacity = "0";
+      setTimeout(function() {
+        paragraph.style.display = "none";
+      }, 500);
+    }
+  }
+</script>
+
 </html>
